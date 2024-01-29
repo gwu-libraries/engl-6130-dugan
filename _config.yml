@@ -27,7 +27,7 @@ repository:
 
 launch_buttons:
   notebook_interface: "classic"
-  thebe: true
+  colab_url: "https://colab.research.google.com"
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
@@ -52,5 +52,5 @@ parse:
 
 sphinx:
   recursive_update: true
-  config:
-    html_extra_path: ["parsons-assets", "static-assets"] # Parsons Problems .js, .css, and .html live here, as well as inline images for notebooks
+#  config:
+#    html_extra_path: ["parsons-assets", "static-assets"] # Parsons Problems .js, .css, and .html live here, as well as inline images for notebooks
