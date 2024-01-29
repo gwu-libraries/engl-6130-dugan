@@ -442,12 +442,18 @@ document.write(`
 <p>In order to run the code, you will open a copy of this document in Google’s Colaboratory service. <a class="reference external" href="https://research.google.com/colaboratory/faq.html">Google Colab</a> is a freely available platform for programming with Python that requires no local installation and provides decent compute resources (memory and processing power).</p>
 <p>To use this document in Colab, follow the steps below (or watch this short video):</p>
 <ol class="arabic simple">
-<li><p>Click the rocket icon in the upper-right corner of this page.</p></li>
+<li><p>Click the rocket icon <span class="fas fa-fa-rocket"></span> in the upper-right corner of this page.</p></li>
 <li><p>Select the <code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Colab</span></code> option.</p></li>
 <li><p>A new tab should open in your browser, displaying the content of this page but in the Colab interface.</p></li>
-<li><p>Click the option <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">a</span> <span class="pre">copy</span> <span class="pre">of</span> <span class="pre">Drive</span></code> to create your own copy of the document (so that you can preserve any changes you make as well as the output from your interactions).</p></li>
-<li><p>The Colab version of the document is backed by a running instance of the Python kernel, meaning that you can run the code and see the results in the Colab interface. To run any of the code sections, click the play icon to the left of that section, as in the image below.</p></li>
-<li><p>The logic of a programming language like Python is strictly linear. Running code sections out of order, or skipping a code section, will often result in errors, which will appear below the code section that triggered the error, in lieu of the expected output. If you start to encounter unexpected errors, go to the Colab menu at the top of the browser window and select <code class="docutils literal notranslate"><span class="pre">Kernel</span> <span class="pre">-</span> <span class="pre">Restart</span> <span class="pre">Kernel</span></code>. Then run each of the code sections in order, starting from the top of the document.</p></li>
+<li><p>Within that tab, click the button <code class="docutils literal notranslate"><span class="pre">Copy</span> <span class="pre">to</span> <span class="pre">Drive</span></code> from the menu at the top to create your own copy of the document (so that you can preserve any changes you make as well as the output from your interactions).</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/save-to-drive.png"><img alt="Button with the text &quot;Copy to Drive&quot; and the Google Drive symbol" src="_images/save-to-drive.png" style="width: 150px;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>The Colab version of the document is backed by a running instance of the Python kernel (the program that runs Python progams), meaning that you can run the code and see the results in the Colab interface. To run any of the code sections, click the play icon to the left of that section, as in the image below.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/play-button.png"><img alt="Python code with play button icon to the left; red arrow pointing to the play button." src="_images/play-button.png" style="width: 250px;" /></a>
+<ol class="arabic simple" start="6">
+<li><p>The logic of a programming language like Python is strictly linear. Running code sections out of order, or skipping a code section, will often result in errors, which will appear below the code section that triggered the error, in lieu of the expected output. If you start to encounter unexpected errors, go to the Colab menu at the top of the browser window and select <code class="docutils literal notranslate"><span class="pre">Runtime</span> <span class="pre">-</span> <span class="pre">Restart</span> <span class="pre">Session</span></code>. Then run each of the code sections in order, starting from the top of the document.</p></li>
 </ol>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">Reading</span> <span class="pre">the</span> <span class="pre">code</span></code> sections, as well as footnotes and references, have been ommitted from the Colab version of this document in order to make the latter easier to use. So you may want to toggle back and forth between the two versions. (I apologize for that inconvenience – it’s a technical limitation I have not had time to address.)</p>
 </div>
@@ -473,9 +479,9 @@ document.write(`
 </div>
 </div>
 </div>
-<p>In the encoding specified by the Python language, the equals sign (<code class="docutils literal notranslate"><span class="pre">=</span></code>) is an instruction that loosely translates to: “Store this value (on the right side) somewhere in memory, and give that location in memory the provided label (on the left side).” The following image presents one way of imagining what happens in response to this code (with the caveat that, ultimately, the letters and numbers are represented by their binary encoding).</p>
-<p>[image here]</p>
-<p>By running the previous line of code, we have created a <em>variable</em> called <code class="docutils literal notranslate"><span class="pre">answer_to_everything</span></code>. We can use the variable to retrieve its value (for use in other parts of our program). Run the code below to see some output.</p>
+<p>In the encoding specified by the Python language, the equals sign (<code class="docutils literal notranslate"><span class="pre">=</span></code>) is an instruction that loosely translates to: “Store this value (on the right side) somewhere in memory, and give that location in memory the provided name (on the left side).” The following image presents one way of imagining what happens in response to this code (with the caveat that, ultimately, the letters and numbers are represented by their binary encoding).</p>
+<a class="reference internal image-reference" href="_images/variable.png"><img alt="Shows the words &quot;answer to everything&quot; in one box, with an arrow pointing to a box in the middle, from which another arrow points to the number 42 in the third box. The first box is labeled &quot;name,&quot; the second &quot;variable,&quot; and the third, &quot;value.&quot;" src="_images/variable.png" style="width: 500px;" /></a>
+<p>By running the previous line of code, we have created a <em>variable</em>, which maps the name <code class="docutils literal notranslate"><span class="pre">answer_to_everything</span></code> to the value <code class="docutils literal notranslate"><span class="pre">42</span></code>. We can use the variable to retrieve its value (for use in other parts of our program). Run the code below to see some output.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">answer_to_everything</span><span class="p">)</span>
@@ -499,7 +505,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>A misspelled variable causes Python to abort its computation. Imagine if conversation ground to a halt whenever one of the parties mispronounced a word or used a malapropism!</p>
+<p>A misspelled variable name causes Python to abort its computation. Imagine if conversation ground to a halt whenever one of the parties mispronounced a word or used a malapropism!</p>
 <p>I tend to say that Python is extremely literal. But of course, this is merely an analogy, and a loose one. There is no room for metaphor in programming languages, at least, not as far as the computation itself is concerned. The operation of a language like Python is determined by the algorithms used to implement it. Given the same input and the same conditions of operation, a given Python program should produce the same output every time. (If it does not, that’s usually considered a bug.)</p>
 </section>
 <section id="encoding-text">
@@ -741,12 +747,12 @@ document.write(`
 <section id="more-tedious-counting">
 <h4>More tedious counting<a class="headerlink" href="#more-tedious-counting" title="Permalink to this heading">#</a></h4>
 <p>One way to construct such an analysis is as follows: represent your sample of text as a continuous string of characters. (As we’ve seen, that’s easy to do in Python.) Then “glue” it to another string, representing the same text, but with every character shifted to the left by one position. For example, the first several characters of the first sentence from <em>Gargantua and Pantagruel</em> would look like this:</p>
-<p>[image]</p>
-<p>With the exception of the dangling left-most and right-most characters, you now have a pair of strings that yield, for each position, a pair of characters.</p>
-<p>[image with highlighting]</p>
+<a class="reference internal image-reference" href="_images/rabelais-1.png"><img alt="The text &quot;Most noble and illust&quot; is shown twice, one two consecutive lines, with each letter surrounded by a box. The second line is shifted to the left one character, so that the &quot;M&quot; of the first line appears above the &quot;o&quot; of the second line, etc." src="_images/rabelais-1.png" style="width: 500px;" /></a>
+<p>With the exception of the dangling left-most and right-most characters, you now have a pair of strings that yield, for each position, a pair of characters. In the image below, the first few successive pairs are shown, along with the position of each pair of characters with respect to the “glued” strings.</p>
+<a class="reference internal image-reference" href="_images/rabelais-2.png"><img alt="A table with the letters &quot;h,&quot; a space, &quot;o,&quot; &quot;e,&quot; and &quot;i&quot; along the top (column headers), and &quot;t,&quot; space, &quot;c,&quot; &quot;w,&quot; &quot;s,&quot; and &quot;g&quot; along the left-hand side (row labels), and numbers in the cells of the table." src="_images/rabelais-2.png" style="width: 500px;" /></a>
 <p>These pairs are called bigrams. But in order to construct a Markov chain, we’re not just counting bigrams. Rather, we want to create what’s called a <em>transition table</em>: a table where we can look up a given character – the letter <code class="docutils literal notranslate"><span class="pre">e</span></code>, say – and then for any other character that can follow <code class="docutils literal notranslate"><span class="pre">e</span></code>, find the frequency with which it occurs in that position (i.e., following an <code class="docutils literal notranslate"><span class="pre">e</span></code>). If a given character never follows another character, its bigram doesn’t exist in the table.</p>
-<p>Below are shown the most common bigrams in such a transition table created on the basis of <em>Gargantua and Pantagruel</em>.</p>
-<p>[image]</p>
+<p>Below are shown some of the most common bigrams in such a transition table created on the basis of <em>Gargantua and Pantagruel</em>.</p>
+<a class="reference internal image-reference" href="_images/bigram-table.png"><img alt="The text &quot;Most noble and illust&quot; is shown as above, with the addition of alternating yellow and blue highlighting to identify pairs of letters, and numbers along the bottom, starting at 0." src="_images/bigram-table.png" style="width: 300px;" /></a>
 </section>
 <section id="preparing-the-text">
 <h4>Preparing the text<a class="headerlink" href="#preparing-the-text" title="Permalink to this heading">#</a></h4>
@@ -980,9 +986,9 @@ document.write(`
 <h4>More silly walks<a class="headerlink" href="#more-silly-walks" title="Permalink to this heading">#</a></h4>
 <p>More adept Ouija-board users can be simulated by increasing the size of our n-grams. As Shannon’s article demonstrates, the approximation to the English lexicon increases by moving from bigrams to trigrams – such that frequencies are calculated in terms of the occurrence of a given letter immediately after a pair of letters.</p>
 <p>So instead of a table like this:</p>
-<p>[image]</p>
-<p>we have this:</p>
-<p>[image]</p>
+<a class="reference internal image-reference" href="_images/bigram-table.png"><img alt="A table with the letters &quot;h,&quot; a space, &quot;o,&quot; &quot;e,&quot; and &quot;i&quot; along the top (column headers), and &quot;t,&quot; space, &quot;c,&quot; &quot;w,&quot; &quot;s,&quot; and &quot;g&quot; along the left-hand side (row labels), and numbers in the cells of the table." src="_images/bigram-table.png" style="width: 300px;" /></a>
+<p>we have this (where the <code class="docutils literal notranslate"><span class="pre">h</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">w</span></code> in the row labels are all preceded by the space character):</p>
+<a class="reference internal image-reference" href="_images/bigram-table-2.png"><img alt="A table with the letters &quot;e,&quot; &quot;a,&quot; space, &quot;i,&quot; &quot;o&quot; along the top (column headers), and &quot;th,&quot; space &quot;h&quot;, space &quot;b&quot;,&quot; &quot;er,&quot; and space &quot;w&quot; along the left-hand side (row labels), and numbers in the cells of the table." src="_images/bigram-table-2.png" style="width: 300px;" /></a>
 <p>Note, however, that throughout these experiments, the level of approximation to any particular understanding of “the English lexicon” depends on the nature of the data from which we derive our frequencies. Urquhart’s translation of Rabelais, dating from the 16th Century, has a rather distinctive vocabulary, as you might expect, even with the modernized spelling and grammar of the Project Gutenberg edition.</p>
 <p>The code below defines some interactive controls to make our experiments easier to manipulate. Run both sections of code to create the controls.</p>
 <div class="cell docutils container">
@@ -997,7 +1003,7 @@ document.write(`
             <span class="nb">max</span><span class="o">=</span><span class="n">max_value</span><span class="p">,</span>
             <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Set value of n:&#39;</span><span class="p">)</span>
     
-<span class="k">def</span> <span class="nf">create_update_function</span><span class="p">(</span><span class="n">ttable</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">transition_function</span><span class="p">,</span> <span class="n">slider</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">create_update_function</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">transition_function</span><span class="p">,</span> <span class="n">slider</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    returns a callback function for use in updating the provided transition table with ngrams from text, given slider.value, as well as an output widget</span>
 <span class="sd">    for displaying the output of the callback</span>
@@ -1005,12 +1011,12 @@ document.write(`
     <span class="n">output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
     <span class="k">def</span> <span class="nf">on_update</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-            <span class="k">nonlocal</span> <span class="n">ttable</span>
+            <span class="k">global</span> <span class="n">ttable</span>
             <span class="n">ttable</span> <span class="o">=</span> <span class="n">transition_function</span><span class="p">(</span><span class="n">create_ngrams</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">slider</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Updated! Value of n is now </span><span class="si">{</span><span class="n">slider</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">on_update</span><span class="p">,</span> <span class="n">output</span>
 
-<span class="k">def</span> <span class="nf">create_generate_function</span><span class="p">(</span><span class="n">ttable</span><span class="p">,</span> <span class="n">sample_function</span><span class="p">,</span> <span class="n">slider</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">create_generate_function</span><span class="p">(</span><span class="n">sample_function</span><span class="p">,</span> <span class="n">slider</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    returns a callback function for use in generating new random samples from the provided trasition table.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -1033,10 +1039,11 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ngram_slider</span> <span class="o">=</span> <span class="n">create_slider</span><span class="p">()</span>
-<span class="n">update_callback</span><span class="p">,</span> <span class="n">update_output</span> <span class="o">=</span> <span class="n">create_update_function</span><span class="p">(</span><span class="n">g_ttable</span><span class="p">,</span> <span class="n">g_text_norm</span><span class="p">,</span> <span class="n">create_transition_table</span><span class="p">,</span> <span class="n">ngram_slider</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ttable</span> <span class="o">=</span> <span class="n">g_ttable</span>
+<span class="n">ngram_slider</span> <span class="o">=</span> <span class="n">create_slider</span><span class="p">()</span>
+<span class="n">update_callback</span><span class="p">,</span> <span class="n">update_output</span> <span class="o">=</span> <span class="n">create_update_function</span><span class="p">(</span><span class="n">g_text_norm</span><span class="p">,</span> <span class="n">create_transition_table</span><span class="p">,</span> <span class="n">ngram_slider</span><span class="p">)</span>
 <span class="n">update_button</span> <span class="o">=</span> <span class="n">create_button</span><span class="p">(</span><span class="s2">&quot;Update table&quot;</span><span class="p">,</span> <span class="n">update_callback</span><span class="p">)</span>
-<span class="n">generate_callback</span><span class="p">,</span> <span class="n">generate_output</span> <span class="o">=</span> <span class="n">create_generate_function</span><span class="p">(</span><span class="n">g_ttable</span><span class="p">,</span> <span class="n">create_sample</span><span class="p">,</span> <span class="n">ngram_slider</span><span class="p">)</span>
+<span class="n">generate_callback</span><span class="p">,</span> <span class="n">generate_output</span> <span class="o">=</span> <span class="n">create_generate_function</span><span class="p">(</span><span class="n">create_sample</span><span class="p">,</span> <span class="n">ngram_slider</span><span class="p">)</span>
 <span class="n">generate_button</span> <span class="o">=</span> <span class="n">create_button</span><span class="p">(</span><span class="s2">&quot;New sample&quot;</span><span class="p">,</span> <span class="n">generate_callback</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">ngram_slider</span><span class="p">,</span> <span class="n">update_button</span><span class="p">,</span> <span class="n">update_output</span><span class="p">,</span> <span class="n">generate_button</span><span class="p">,</span> <span class="n">generate_output</span><span class="p">)</span>
 </pre></div>
@@ -1105,11 +1112,11 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_ttable_w</span> <span class="o">=</span> <span class="n">create_ttable_words</span><span class="p">(</span><span class="n">create_ngrams</span><span class="p">(</span><span class="n">g_text_words</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ttable</span> <span class="o">=</span> <span class="n">create_ttable_words</span><span class="p">(</span><span class="n">create_ngrams</span><span class="p">(</span><span class="n">g_text_words</span><span class="p">))</span>
 <span class="n">ngram_slider_w</span> <span class="o">=</span> <span class="n">create_slider</span><span class="p">()</span>
-<span class="n">update_callback_w</span><span class="p">,</span> <span class="n">update_output_w</span> <span class="o">=</span> <span class="n">create_update_function</span><span class="p">(</span><span class="n">g_ttable_w</span><span class="p">,</span> <span class="n">g_text_words</span><span class="p">,</span> <span class="n">create_ttable_words</span><span class="p">,</span> <span class="n">ngrams_slider_w</span><span class="p">)</span>
+<span class="n">update_callback_w</span><span class="p">,</span> <span class="n">update_output_w</span> <span class="o">=</span> <span class="n">create_update_function</span><span class="p">(</span><span class="n">g_text_words</span><span class="p">,</span> <span class="n">create_ttable_words</span><span class="p">,</span> <span class="n">ngram_slider_w</span><span class="p">)</span>
 <span class="n">update_button_w</span> <span class="o">=</span> <span class="n">create_button</span><span class="p">(</span><span class="s2">&quot;Update table&quot;</span><span class="p">,</span> <span class="n">update_callback_w</span><span class="p">)</span>
-<span class="n">generate_callback_w</span><span class="p">,</span> <span class="n">generate_output_w</span> <span class="o">=</span> <span class="n">create_generate_function</span><span class="p">(</span><span class="n">g_ttable_w</span><span class="p">,</span> <span class="n">create_sample_words</span><span class="p">)</span>
+<span class="n">generate_callback_w</span><span class="p">,</span> <span class="n">generate_output_w</span> <span class="o">=</span> <span class="n">create_generate_function</span><span class="p">(</span><span class="n">create_sample_words</span><span class="p">,</span> <span class="n">ngram_slider_w</span><span class="p">)</span>
 <span class="n">generate_button_w</span> <span class="o">=</span> <span class="n">create_button</span><span class="p">(</span><span class="s2">&quot;New sample&quot;</span><span class="p">,</span> <span class="n">generate_callback_w</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">ngram_slider_w</span><span class="p">,</span> <span class="n">update_button_w</span><span class="p">,</span> <span class="n">update_output_w</span><span class="p">,</span> <span class="n">generate_button_w</span><span class="p">,</span> <span class="n">generate_output_w</span><span class="p">)</span>
 </pre></div>
