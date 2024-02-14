@@ -29,8 +29,8 @@ HEADING_SUB_LEVEL = 4
 TAGS_TO_REMOVE = {'instructor', 'remove-cell'}
 # Pattern for Sphinx glossary directive
 TERM_PATTERN = re.compile(r'{term}`([A-Za-z ]+)`')
-FOOTNOTE_PATTERN = re.compile(r'\[\d+\^\]')
-FOOTNOTE_ANCHOR_PAT = re.compile(r'\[\d+\^\]:')
+FOOTNOTE_PATTERN = re.compile(r'\[\^\d+\]')
+FOOTNOTE_ANCHOR_PAT = re.compile(r'\[\^\d+\]:')
 GLOSSARY_URL = config['Constants']['GLOSSARY_URL']
 IMAGE_URL = config['Constants']['IMAGE_URL']
 # HTML for hint directives (dropdowns)
@@ -209,7 +209,7 @@ class Notebook:
         '''
         Removes any cells with admonitions
         '''
-        if self.data[self.index]['cell_type'] == 'markdown' and self.data[self.index]['source'] and self.data[self.index]['source'][0].startswith('````{admonition}'):
+        if self.data[self.index]['cell_type'] == 'markdown' and self.data[self.index]['source'] and (self.data[self.index]['source'][0].startswith('````{admonition}') or self.data[self.index]['source'][0].startswith('````{note}')):
             self.data.pop(self.index)
             # Backtrack for iteration
             self.index = self.index - 1
