@@ -1,0 +1,4 @@
+format: jb-article
+root: reading_writing_machines
+sections:
+  - file: bibliography

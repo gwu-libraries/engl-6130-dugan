@@ -312,10 +312,13 @@ def main(nb_input, nb_output, nb_output_md, inline_images, remove_admonitions, r
     root = Path(__file__).parents[1]
     nb_input = root / Path(nb_input)
     nb_output = root / Path(nb_output)
-    nb_output_md = root / Path(nb_output_md)
-    # Create folder for storing pure-Markdown notebooks, if it doesn't exist
+
+    if not render_md:
+        nb_output_md = nb_output
+    else:
+        nb_output_md = root / Path(nb_output_md)
     if not nb_output_md.exists() and nb_output_md.is_dir:
-        nb_output_md.mkdir()
+            nb_output_md.mkdir()
     if nb_input.is_file() and nb_input.suffix == '.ipynb':
         nb_paths = [(nb_input, nb_output, nb_output_md)]
     else:
@@ -326,7 +329,6 @@ def main(nb_input, nb_output, nb_output_md, inline_images, remove_admonitions, r
                      nb_output_md / p.parts[-2] / f'{p.stem}-md{p.suffix}') # Add -md to end of non-MyST notebooks
                      for p in glob if p.parts[-2] != '.ipynb_checkpoints']
     for in_, out, md_out in nb_paths:
-        
         logger.info(f'Processing notebook {in_}; saving output to {out}.')
         nb = Notebook(in_)
         nb.remove_tagged_cells()
